@@ -11,9 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
+    "titulo_principal": {
+      "type": "component",
+      "component": "elements.principal",
+      "repeatable": false
+    },
+    "subtitulo": {
+      "type": "component",
+      "component": "elements.subtitle",
+      "repeatable": false
+    },
+    "image_home": {
+      "type": "component",
+      "component": "image.banner",
+      "repeatable": false
     }
   }
 }
