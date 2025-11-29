@@ -1,0 +1,1 @@
+postgresql://neondb_owner:npg_bILTM2zNOwD3@ep-super-mouse-actb6a9d-pooler.sa-east-1.aws.neon.tech/restaurantbackend?sslmode=require&channel_binding=require
