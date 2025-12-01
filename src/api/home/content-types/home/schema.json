@@ -25,15 +25,44 @@
         "images"
       ]
     },
-    "prueba": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "smallTitle_nosotros": {
+      "type": "string"
+    },
+    "title_nosotros": {
+      "type": "string"
+    },
+    "info_title": {
+      "type": "text"
+    },
+    "smallTitle_especial": {
+      "type": "string"
+    },
+    "title_especial": {
+      "type": "string"
+    },
+    "smallTitle_servicio": {
+      "type": "string"
+    },
+    "title_servicio": {
+      "type": "string"
+    },
+    "info_servicio": {
+      "type": "text"
+    },
+    "title_resenas": {
+      "type": "string"
+    },
+    "info_resenas": {
+      "type": "text"
+    },
+    "smallTitle_blog": {
+      "type": "string"
+    },
+    "title_blog": {
+      "type": "string"
+    },
+    "info_blog": {
+      "type": "text"
     }
   }
 }

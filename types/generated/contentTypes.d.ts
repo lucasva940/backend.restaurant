@@ -445,13 +445,25 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    info_blog: Schema.Attribute.Text;
+    info_resenas: Schema.Attribute.Text;
+    info_servicio: Schema.Attribute.Text;
+    info_title: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
-    prueba: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
+    smallTitle_blog: Schema.Attribute.String;
+    smallTitle_especial: Schema.Attribute.String;
+    smallTitle_nosotros: Schema.Attribute.String;
+    smallTitle_servicio: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+    title_blog: Schema.Attribute.String;
+    title_especial: Schema.Attribute.String;
+    title_nosotros: Schema.Attribute.String;
+    title_resenas: Schema.Attribute.String;
+    title_servicio: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
