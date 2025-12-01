@@ -441,16 +441,18 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    banner: Schema.Attribute.Media<'files' | 'images'>;
+    boto_principal: Schema.Attribute.Component<'elements.boton', false>;
+    boton_locacion: Schema.Attribute.Component<'elements.boton', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image_home: Schema.Attribute.Component<'image.banner', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subtitulo: Schema.Attribute.Component<'elements.subtitle', false>;
-    titulo_principal: Schema.Attribute.Component<'elements.principal', false>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

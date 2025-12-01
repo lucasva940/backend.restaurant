@@ -1,42 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ElementsPrincipal extends Struct.ComponentSchema {
-  collectionName: 'components_elements_principals';
+export interface ElementsBoton extends Struct.ComponentSchema {
+  collectionName: 'components_elements_botons';
   info: {
-    displayName: 'principal';
-    icon: 'discuss';
+    displayName: 'boton';
   };
   attributes: {
-    titulo_principal: Schema.Attribute.String;
-  };
-}
-
-export interface ElementsSubtitle extends Struct.ComponentSchema {
-  collectionName: 'components_elements_subtitles';
-  info: {
-    displayName: 'subtitle';
-  };
-  attributes: {
-    subtitulo_principal: Schema.Attribute.Text;
-  };
-}
-
-export interface ImageBanner extends Struct.ComponentSchema {
-  collectionName: 'components_image_banners';
-  info: {
-    displayName: 'banner';
-  };
-  attributes: {
-    hero: Schema.Attribute.Media<'images' | 'files'>;
+    label: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'elements.principal': ElementsPrincipal;
-      'elements.subtitle': ElementsSubtitle;
-      'image.banner': ImageBanner;
+      'elements.boton': ElementsBoton;
     }
   }
 }
