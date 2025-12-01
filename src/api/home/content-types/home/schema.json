@@ -24,16 +24,6 @@
         "files",
         "images"
       ]
-    },
-    "boto_principal": {
-      "type": "component",
-      "component": "elements.boton",
-      "repeatable": false
-    },
-    "boton_locacion": {
-      "type": "component",
-      "component": "elements.boton",
-      "repeatable": true
     }
   }
 }

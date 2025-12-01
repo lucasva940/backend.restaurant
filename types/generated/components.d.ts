@@ -6,7 +6,6 @@ export interface ElementsBoton extends Struct.ComponentSchema {
     displayName: 'boton';
   };
   attributes: {
-    label: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
 }

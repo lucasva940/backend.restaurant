@@ -442,8 +442,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
   attributes: {
     banner: Schema.Attribute.Media<'files' | 'images'>;
-    boto_principal: Schema.Attribute.Component<'elements.boton', false>;
-    boton_locacion: Schema.Attribute.Component<'elements.boton', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
