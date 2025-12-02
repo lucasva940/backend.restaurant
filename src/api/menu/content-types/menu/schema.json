@@ -26,9 +26,6 @@
     "url": {
       "type": "string"
     },
-    "title2": {
-      "type": "string"
-    },
     "info2": {
       "type": "text"
     },
@@ -41,6 +38,9 @@
         "videos",
         "audios"
       ]
+    },
+    "title2": {
+      "type": "string"
     }
   }
 }
