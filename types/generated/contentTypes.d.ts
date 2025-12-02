@@ -486,7 +486,7 @@ export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'videos' | 'audios' | 'files'>;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     info_tarjeta: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -495,12 +495,11 @@ export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    smallTitle_tarjeta: Schema.Attribute.String;
+    smalTitle_tarjeta: Schema.Attribute.String;
     title_tarjeta: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 

@@ -17,10 +17,7 @@
     "info_tarjeta": {
       "type": "text"
     },
-    "smallTitle_tarjeta": {
-      "type": "string"
-    },
-    "url": {
+    "smalTitle_tarjeta": {
       "type": "string"
     },
     "image": {
@@ -28,8 +25,6 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "videos",
-        "audios",
         "files"
       ]
     }
