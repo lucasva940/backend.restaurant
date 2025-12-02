@@ -603,6 +603,40 @@ export interface ApiMenuMenu extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNavardNavard extends Struct.CollectionTypeSchema {
+  collectionName: 'navards';
+  info: {
+    displayName: 'navard';
+    pluralName: 'navards';
+    singularName: 'navard';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navard.navard'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    menu: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    servicio: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+    url2: Schema.Attribute.String;
+    url3: Schema.Attribute.String;
+  };
+}
+
 export interface ApiResenaPersonaResenaPersona
   extends Struct.CollectionTypeSchema {
   collectionName: 'resena_personas';
@@ -1286,6 +1320,7 @@ declare module '@strapi/strapi' {
       'api::dato.dato': ApiDatoDato;
       'api::home.home': ApiHomeHome;
       'api::menu.menu': ApiMenuMenu;
+      'api::navard.navard': ApiNavardNavard;
       'api::resena-persona.resena-persona': ApiResenaPersonaResenaPersona;
       'api::servicio.servicio': ApiServicioServicio;
       'api::sitio.sitio': ApiSitioSitio;

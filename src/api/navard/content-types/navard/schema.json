@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navards",
+  "info": {
+    "singularName": "navard",
+    "pluralName": "navards",
+    "displayName": "navard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "menu": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "servicio": {
+      "type": "string"
+    },
+    "url2": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "url3": {
+      "type": "string"
+    }
+  }
+}
