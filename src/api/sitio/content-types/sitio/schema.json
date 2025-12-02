@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sitios",
+  "info": {
+    "singularName": "sitio",
+    "pluralName": "sitios",
+    "displayName": "sitio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "info": {
+      "type": "text"
+    },
+    "gmail": {
+      "type": "text"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "lugar": {
+      "type": "text"
+    },
+    "boton": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

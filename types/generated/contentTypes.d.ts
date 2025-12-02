@@ -677,6 +677,38 @@ export interface ApiServicioServicio extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSitioSitio extends Struct.CollectionTypeSchema {
+  collectionName: 'sitios';
+  info: {
+    displayName: 'sitio';
+    pluralName: 'sitios';
+    singularName: 'sitio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    boton: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gmail: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    info: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::sitio.sitio'> &
+      Schema.Attribute.Private;
+    lugar: Schema.Attribute.Text;
+    numero: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
   collectionName: 'tarjetas';
   info: {
@@ -1256,6 +1288,7 @@ declare module '@strapi/strapi' {
       'api::menu.menu': ApiMenuMenu;
       'api::resena-persona.resena-persona': ApiResenaPersonaResenaPersona;
       'api::servicio.servicio': ApiServicioServicio;
+      'api::sitio.sitio': ApiSitioSitio;
       'api::tarjeta.tarjeta': ApiTarjetaTarjeta;
       'api::team.team': ApiTeamTeam;
       'plugin::content-releases.release': PluginContentReleasesRelease;
