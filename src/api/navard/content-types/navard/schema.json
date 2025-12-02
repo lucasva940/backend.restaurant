@@ -11,33 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
     "logo": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
-    },
-    "menu": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string"
-    },
-    "servicio": {
-      "type": "string"
-    },
-    "url2": {
-      "type": "string"
-    },
-    "about": {
-      "type": "string"
-    },
-    "url3": {
-      "type": "string"
     }
   }
 }

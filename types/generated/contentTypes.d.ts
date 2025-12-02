@@ -614,7 +614,6 @@ export interface ApiNavardNavard extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    about: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -624,16 +623,16 @@ export interface ApiNavardNavard extends Struct.CollectionTypeSchema {
       'api::navard.navard'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    menu: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    servicio: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
-    url2: Schema.Attribute.String;
-    url3: Schema.Attribute.String;
   };
 }
 
