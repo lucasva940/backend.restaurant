@@ -508,32 +508,35 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiPlatoPlato extends Struct.CollectionTypeSchema {
-  collectionName: 'platos';
+export interface ApiMenuMenu extends Struct.SingleTypeSchema {
+  collectionName: 'menus';
   info: {
-    displayName: 'plato';
-    pluralName: 'platos';
-    singularName: 'plato';
+    displayName: 'menu';
+    pluralName: 'menus';
+    singularName: 'menu';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    boton: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    info: Schema.Attribute.String;
+    info: Schema.Attribute.Text;
+    info2: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::plato.plato'> &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'> &
       Schema.Attribute.Private;
-    precio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     smallTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    title2: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -561,6 +564,36 @@ export interface ApiResenaPersonaResenaPersona
       Schema.Attribute.Private;
     nombre: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Struct.SingleTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    info: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    smallTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -633,6 +666,7 @@ export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
       'api::tarjeta.tarjeta'
     > &
       Schema.Attribute.Private;
+    precio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     smalTitle_tarjeta: Schema.Attribute.String;
     title_tarjeta: Schema.Attribute.String;
@@ -1154,8 +1188,9 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
       'api::home.home': ApiHomeHome;
-      'api::plato.plato': ApiPlatoPlato;
+      'api::menu.menu': ApiMenuMenu;
       'api::resena-persona.resena-persona': ApiResenaPersonaResenaPersona;
+      'api::service.service': ApiServiceService;
       'api::servicio.servicio': ApiServicioServicio;
       'api::tarjeta.tarjeta': ApiTarjetaTarjeta;
       'plugin::content-releases.release': PluginContentReleasesRelease;
