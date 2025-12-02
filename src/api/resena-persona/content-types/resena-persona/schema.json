@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resena_personas",
+  "info": {
+    "singularName": "resena-persona",
+    "pluralName": "resena-personas",
+    "displayName": "reseña_persona"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "nombre": {
+      "type": "text"
+    }
+  }
+}

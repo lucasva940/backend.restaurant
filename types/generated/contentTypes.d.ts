@@ -504,6 +504,109 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPlatoPlato extends Struct.CollectionTypeSchema {
+  collectionName: 'platos';
+  info: {
+    displayName: 'plato';
+    pluralName: 'platos';
+    singularName: 'plato';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    info: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::plato.plato'> &
+      Schema.Attribute.Private;
+    precio: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    smallTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResenaPersonaResenaPersona
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'resena_personas';
+  info: {
+    displayName: 'rese\u00F1a_persona';
+    pluralName: 'resena-personas';
+    singularName: 'resena-persona';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resena-persona.resena-persona'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioServicio extends Struct.CollectionTypeSchema {
+  collectionName: 'servicios';
+  info: {
+    displayName: 'servicio';
+    pluralName: 'servicios';
+    singularName: 'servicio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    asientos: Schema.Attribute.String;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    comida: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    decoracion: Schema.Attribute.String;
+    foto: Schema.Attribute.String;
+    icono: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icono2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icono3: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icono4: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    icono5: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icono6: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio.servicio'
+    > &
+      Schema.Attribute.Private;
+    pastel: Schema.Attribute.String;
+    pista: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
   collectionName: 'tarjetas';
   info: {
@@ -1047,6 +1150,9 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
       'api::home.home': ApiHomeHome;
+      'api::plato.plato': ApiPlatoPlato;
+      'api::resena-persona.resena-persona': ApiResenaPersonaResenaPersona;
+      'api::servicio.servicio': ApiServicioServicio;
       'api::tarjeta.tarjeta': ApiTarjetaTarjeta;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
