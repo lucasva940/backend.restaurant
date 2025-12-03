@@ -17,9 +17,6 @@
     "info_tarjeta": {
       "type": "text"
     },
-    "smalTitle_tarjeta": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -30,6 +27,12 @@
     },
     "precio": {
       "type": "string"
+    },
+    "tipos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tipo.tipo",
+      "mappedBy": "tarjeta"
     }
   }
 }

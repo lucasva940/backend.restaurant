@@ -773,7 +773,7 @@ export interface ApiTarjetaTarjeta extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     precio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    smalTitle_tarjeta: Schema.Attribute.String;
+    tipos: Schema.Attribute.Relation<'oneToMany', 'api::tipo.tipo'>;
     title_tarjeta: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -808,6 +808,32 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiTipoTipo extends Struct.CollectionTypeSchema {
+  collectionName: 'tipos';
+  info: {
+    displayName: 'tipo';
+    pluralName: 'tipos';
+    singularName: 'tipo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tipo.tipo'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tarjeta: Schema.Attribute.Relation<'manyToOne', 'api::tarjeta.tarjeta'>;
+    tipo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1332,6 +1358,7 @@ declare module '@strapi/strapi' {
       'api::sitio.sitio': ApiSitioSitio;
       'api::tarjeta.tarjeta': ApiTarjetaTarjeta;
       'api::team.team': ApiTeamTeam;
+      'api::tipo.tipo': ApiTipoTipo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
