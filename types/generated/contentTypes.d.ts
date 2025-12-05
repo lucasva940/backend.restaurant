@@ -523,6 +523,38 @@ export interface ApiDatoDato extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEquipoEquipo extends Struct.SingleTypeSchema {
+  collectionName: 'equipos';
+  info: {
+    displayName: 'equipo';
+    pluralName: 'equipos';
+    singularName: 'equipo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    info: Schema.Attribute.Text;
+    info2: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::equipo.equipo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    title2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -745,6 +777,37 @@ export interface ApiSitioSitio extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiTarjetaEquipoTarjetaEquipo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tarjeta_equipos';
+  info: {
+    displayName: 'tarjeta_equipo';
+    pluralName: 'tarjeta-equipos';
+    singularName: 'tarjeta-equipo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cargo: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tarjeta-equipo.tarjeta-equipo'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1349,12 +1412,14 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::blog.blog': ApiBlogBlog;
       'api::dato.dato': ApiDatoDato;
+      'api::equipo.equipo': ApiEquipoEquipo;
       'api::home.home': ApiHomeHome;
       'api::menu.menu': ApiMenuMenu;
       'api::navard.navard': ApiNavardNavard;
       'api::resena-persona.resena-persona': ApiResenaPersonaResenaPersona;
       'api::servicio.servicio': ApiServicioServicio;
       'api::sitio.sitio': ApiSitioSitio;
+      'api::tarjeta-equipo.tarjeta-equipo': ApiTarjetaEquipoTarjetaEquipo;
       'api::tarjeta.tarjeta': ApiTarjetaTarjeta;
       'api::team.team': ApiTeamTeam;
       'api::tipo.tipo': ApiTipoTipo;

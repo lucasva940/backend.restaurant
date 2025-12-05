@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tarjeta_equipos",
+  "info": {
+    "singularName": "tarjeta-equipo",
+    "pluralName": "tarjeta-equipos",
+    "displayName": "tarjeta_equipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "cargo": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
