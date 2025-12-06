@@ -711,10 +711,6 @@ export interface ApiNavardNavard extends Struct.CollectionTypeSchema {
       'api::navard.navard'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
