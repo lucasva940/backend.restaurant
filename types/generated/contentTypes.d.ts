@@ -443,10 +443,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   attributes: {
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     banner4: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    banner5: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    banner5: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Schema.Attribute.String;
     button4: Schema.Attribute.String;
     button5: Schema.Attribute.String;
