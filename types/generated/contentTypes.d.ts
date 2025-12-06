@@ -670,7 +670,6 @@ export interface ApiMenuMenu extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    boton: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -687,7 +686,6 @@ export interface ApiMenuMenu extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 

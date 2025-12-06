@@ -20,12 +20,6 @@
     "info": {
       "type": "text"
     },
-    "boton": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string"
-    },
     "info2": {
       "type": "text"
     },
