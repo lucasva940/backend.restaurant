@@ -97,6 +97,9 @@
         "videos",
         "audios"
       ]
+    },
+    "smalTitle_resenas": {
+      "type": "string"
     }
   }
 }

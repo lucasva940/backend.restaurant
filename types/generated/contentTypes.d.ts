@@ -477,6 +477,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    button: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -614,6 +615,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     smallTitle_especial: Schema.Attribute.String;
     smallTitle_nosotros: Schema.Attribute.String;
     smallTitle_servicio: Schema.Attribute.String;
+    smalTitle_resenas: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
     title_blog: Schema.Attribute.String;
